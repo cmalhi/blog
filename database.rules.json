@@ -1,0 +1,14 @@
+{
+	"rules": {
+		"posts": {
+			".read": true,
+			".write": "auth != null",
+			 ".indexOn": ["datetime"]
+		},
+		"comments": {
+			".read": true,
+			".write": "auth != null",
+			".indexOn": ["datetime"]
+		}
+	}
+}
