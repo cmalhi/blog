@@ -1,48 +1,36 @@
-# React Redux Firebase blog
+[![CircleCI](https://circleci.com/gh/r-park/todo-react-redux.svg?style=shield&circle-token=6caf8c493bd66544717ff9a47ae01d8be036e53c)](https://circleci.com/gh/r-park/todo-react-redux)
 
-Very simple blog app developed using React Redux Firebase.  
 
-Sample app shows how to create, update and delete html posts, write and delete comments.    
+# Todo app with Create React App, React Redux, and Firebase
+A simple Todo app example with **undelete** capability — built with [Create React App](https://github.com/facebookincubator/create-react-app), [React Redux](https://github.com/reactjs/react-redux), and [Firebase](https://firebase.google.com/).
 
-User management is handle using firebase providers. As example Google provider is being used.
+Try the demo at https://todo-react-redux.firebaseapp.com. 
 
-Demo of app is available at https://redux-blog-533c0.firebaseapp.com
+A version of this app built with [redux-saga middleware](https://github.com/yelouafi/redux-saga) is available [here](https://github.com/r-park/todo-redux-saga).
+
 
 ## Stack
 
-- React
-- React-Redux
-- React-Router
-- React-Router-Redux
-- Redux
-- Redux-Thunk
-- React-toolbox for material design
-- React-rte  Rich text editor
-- sanitizer - CAJA html sanitizer
-- Moment
-- Firebase SDK 3 with OAuth authentication
-- Babel
+- Create React App
+- React Redux
+- React Router
+- React Router Redux
+- Redux Thunk
+- Redux Devtools Extension for Chrome
+- Firebase SDK with OAuth authentication
 - Immutable
-- Recompose
+- Reselect
 - SASS
-- PostCSS
-- Webpack
 
-## Developed using
-- Eslint
-- Airbnb Eslint config
-- Ava
-- Enzyme
-- Chai
-- Sinon
-- Proxyquire
 
-## Quick Start
+Quick Start
+-----------
+
 ```shell
-$ git clone https://github.com/dlebedynskyi/Redux-Firebase-blog
-$ cd Redux-Firebase-blog
+$ git clone https://github.com/r-park/todo-react-redux.git
+$ cd todo-react-redux
 $ npm install
-$ npm run watch
+$ npm start
 ```
 
 ## Deploying to Firebase
@@ -52,7 +40,7 @@ $ npm run watch
 - Configure the authentication providers for your Firebase project from your Firebase account console
 
 #### Configure this app with your project-specific details:
-```javascript
+```json
 // .firebaserc
 
 {
@@ -61,19 +49,17 @@ $ npm run watch
   }
 }
 ```
+
 ```javascript
-// src/config/config.js
-export default {
-  firebase:
-    apiKey: 'your api key',
-    authDomain: 'your-project-id.firebaseapp.com',
-    databaseURL: 'https://your-project-id.firebaseio.com',
-    storageBucket: 'your-project-id.appspot.com',
-  }
+// src/firebase/config.js
+
+export const firebaseConfig = {
+  apiKey: 'your api key',
+  authDomain: 'your-project-id.firebaseapp.com',
+  databaseURL: 'https://your-project-id.firebaseio.com',
+  storageBucket: 'your-project-id.appspot.com'
 };
 ```
-#### Add default data sample (optional)
-In your firebase console you can import `initial.data.json` into your database. File contains 1 post and 1 comment as a prototype of your db structure used by application.
 
 #### Install firebase-tools:
 ```shell
@@ -89,15 +75,10 @@ $ firebase deploy
 ```
 
 
-NPM Command Summary
--------------------
+## NPM Commands
 
 |Script|Description|
 |---|---|
-|`npm run watch`|Start webpack development server @ `localhost:3000`|
-|`npm run build`|Build app to `./dist`|
-|`npm run clean`|Removes build artifact from `./dist`|
-|`npm start`|Run express server  @ `localhost:3000` for './dist'.(Run `npm run build` first)|
-|`npm run lint`|Lint `.js` files|
-|`npm test`|Run unit tests with Ava|
-|`npm run test:watch`|Run unit tests in watch mode|
+|`npm start`|Start webpack development server @ `localhost:3000`|
+|`npm run build`|Build the application to `./build` directory|
+|`npm test`|Test the application; watch for changes and retest|
