@@ -1,6 +1,8 @@
 export const firebaseConfig = {
-  apiKey: 'AIzaSyBsVVpEDrlNPEmshLcmOuE0FxhjPn0AqMg',
-  authDomain: 'todo-react-redux.firebaseapp.com',
-  databaseURL: 'https://todo-react-redux.firebaseio.com',
-  storageBucket: 'firebase-todo-react-redux.appspot.com'
+  apiKey: "AIzaSyD2pJiyOnk2M-Q17Qznsgf8PT7_amcm7HM",
+  authDomain: "mangoreview-ac27c.firebaseapp.com",
+  databaseURL: "https://mangoreview-ac27c.firebaseio.com",
+  projectId: "mangoreview-ac27c",
+  storageBucket: "mangoreview-ac27c.appspot.com",
+  messagingSenderId: "370400637882"
 };
